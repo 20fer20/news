@@ -3,12 +3,13 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useParams
+  Link
 } from "react-router-dom";
 
 import './App.css';
-import HomePage from "./pages/home";
+import HomePage from "./pages/Home";
+import CategoryPage from "./pages/Category";
+import NewsPage from "./pages/News";
 
 export default function App() {
   return (
@@ -31,6 +32,8 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
+        <Route path="/news/:newsId">
+            <NewsPage />
           <Route path="/category/:categorySlug">
             <CategoryPage />
           </Route>
